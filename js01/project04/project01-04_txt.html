@@ -11,6 +11,7 @@
 
       Filename: index.htm
    -->
+   <script src="project01-04_txt.js"></script>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Hands-on Project 1-4</title>
@@ -39,9 +40,35 @@
                <input type="radio" id="workoption" name="shippingaddr" />
             </label>
          </fieldset>
-         
-         
-         
+         <script>
+            var homeAddress = document.createElement("div");
+            homeAddress.innerHTML = homeStreet + "<br>" + homeCity + ", " + homeState + " " + homeCode;
+            document.getElementById("homeaddress").appendChild(homeAddress);
+            </script>
+            <script>
+            </script>
+            </div>
+            
+            <div>
+            <label for="workoption"><input type="radio" id="workoption" name="address" value="work">Work</label>
+            <script>
+            document.getElementById("workoption").onclick = function() {
+              document.getElementById("street").value = workStreet;
+              document.getElementById("city").value = workCity;
+              document.getElementById("state").value = workState;
+              document.getElementById("code").value = workCode;
+            };
+            </script>
+            </input>
+            <script>
+               var workAddress = document.createElement("div");
+               workAddress.innerHTML = workStreet + "<br>" + workCity + ", " + workState + " " + workCode;
+               document.getElementById("workaddress").appendChild(workAddress);
+               </script>
+               </div>               
+               <div id="workaddress"></div>
+
+            <fieldset>
           <fieldset id="contactinfo">
             <label for="street">
               Street Address
@@ -56,7 +83,7 @@
               <input type="text" id="state" />
             </label>
             <label for="code">
-              Zip
+              Zip code
               <input type="text" id="code" />
             </label>
           </fieldset>
